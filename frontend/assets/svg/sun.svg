@@ -1,0 +1,13 @@
+<svg width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- Rayons du soleil -->
+<line x1="22.5" y1="2" x2="22.5" y2="8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+<line x1="22.5" y1="36" x2="22.5" y2="42" stroke="white" stroke-width="2" stroke-linecap="round"/>
+<line x1="43" y1="22" x2="37" y2="22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+<line x1="8" y1="22" x2="2" y2="22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+<line x1="36.78" y1="7.22" x2="32.36" y2="11.64" stroke="white" stroke-width="2" stroke-linecap="round"/>
+<line x1="12.64" y1="32.36" x2="8.22" y2="36.78" stroke="white" stroke-width="2" stroke-linecap="round"/>
+<line x1="36.78" y1="36.78" x2="32.36" y2="32.36" stroke="white" stroke-width="2" stroke-linecap="round"/>
+<line x1="12.64" y1="11.64" x2="8.22" y2="7.22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+<!-- Corps du soleil -->
+<circle cx="22.5" cy="22" r="10" fill="white"/>
+</svg>

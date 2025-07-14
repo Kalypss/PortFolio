@@ -1,0 +1,12 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Umbrella canopy -->
+  <path d="M8 2C4.68629 2 2 4.68629 2 8H14C14 4.68629 11.3137 2 8 2Z" fill="white"/>
+  <!-- Umbrella handle -->
+  <path d="M8 8V13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Umbrella tip/curve -->
+  <path d="M8 13C8 13.5523 8.44772 14 9 14C9.55228 14 10 13.5523 10 13" stroke="white" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+  <!-- Umbrella ribs -->
+  <path d="M5 6L8 8" stroke="white" stroke-width="0.8"/>
+  <path d="M11 6L8 8" stroke="white" stroke-width="0.8"/>
+  <path d="M8 4L8 8" stroke="white" stroke-width="0.8"/>
+</svg>

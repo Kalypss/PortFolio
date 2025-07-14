@@ -1,0 +1,445 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variables CSS pour les thèmes */
+:root {
+  /* Thème sombre par défaut */
+  --bg-primary: #000000;
+  --bg-secondary: #1A1A1A;
+  --text-primary: #FFFFFF;
+  --text-secondary: #CCCCCC;
+  --border-color: #333333;
+  
+  /* Variables pour les vagues */
+  --wave-color-1: #000000;
+  --wave-color-2: #1A1A1A;
+  --wave-opacity: 0.8;
+  
+  /* Filtres pour les icônes météo */
+  --weather-icon-filter: brightness(0) invert(1); /* Noir vers blanc */
+}
+
+/* Styles globaux pour les thèmes et scroll */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
+  scroll-padding-top: 0;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.4s ease;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Sections avec scroll snap optimisé */
+.scroll-section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+
+/* Vagues CSS */
+.wave-container {
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.wave-top {
+  top: 0;
+  transform: rotate(180deg);
+}
+
+.wave-bottom {
+  bottom: 0;
+}
+
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 150px;
+  background: var(--wave-color-1);
+  opacity: var(--wave-opacity);
+}
+
+.wave:before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 150px;
+  background: var(--wave-color-2);
+  opacity: 0.6;
+  animation: wave-animation 3s ease-in-out infinite;
+  top: 0;
+  left: 0;
+}
+
+.wave:after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 150px;
+  background: var(--bg-primary);
+  opacity: 0.3;
+  animation: wave-animation-2 4s ease-in-out infinite;
+  top: 10px;
+  left: 0;
+}
+
+/* Animations des vagues */
+@keyframes wave-animation {
+  0%, 100% {
+    clip-path: polygon(
+      0% 47%, 10% 48%, 33% 54%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 
+      100% 100%, 0% 100%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 
+      100% 100%, 0% 100%
+    );
+  }
+}
+
+@keyframes wave-animation-2 {
+  0%, 100% {
+    clip-path: polygon(
+      0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 
+      100% 100%, 0% 100%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      0% 47%, 10% 48%, 33% 54%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 
+      100% 100%, 0% 100%
+    );
+  }
+}
+
+/* Transition fluide pour le changement de thème */
+.theme-transition {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Configuration de la grille Bento personnalisée */
+.custom-bento-grid {
+  grid-template-areas: 
+    "intro intro photo stats1 stats2 tech"
+    "social1 social2 projects projects languages status"
+    "github github github contact contact contact";
+}
+
+/* Responsive pour tablettes (md) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .custom-bento-grid {
+    grid-template-areas: 
+      "intro intro intro"
+      "photo stats1 stats2"
+      "tech tech tech"
+      "social1 social2 projects"
+      "projects projects projects"
+      "github github github"
+      "languages status contact"
+      "contact contact contact";
+  }
+}
+
+/* Responsive pour petites tablettes (sm) */
+@media (max-width: 768px) and (min-width: 481px) {
+  .custom-bento-grid {
+    grid-template-areas: 
+      "intro intro"
+      "photo stats1"
+      "stats2 tech"
+      "social1 social2"
+      "projects projects"
+      "github github"
+      "languages status"
+      "contact contact";
+  }
+}
+
+/* Responsive pour mobile */
+@media (max-width: 480px) {
+  .custom-bento-grid {
+    grid-template-areas: 
+      "intro"
+      "photo"
+      "stats1"
+      "stats2"
+      "tech"
+      "social1"
+      "social2"
+      "projects"
+      "github"
+      "languages"
+      "status"
+      "contact";
+  }
+}
+
+/* Styles responsive supplémentaires pour les cards Bento */
+@media (max-width: 480px) {
+  .custom-bento-grid > div {
+    min-height: 120px;
+  }
+  
+  .bento-intro {
+    min-height: 180px;
+  }
+  
+  .bento-tech {
+    min-height: 160px;
+  }
+  
+  .bento-projects {
+    min-height: 140px;
+  }
+  
+  .bento-contact {
+    min-height: 140px;
+  }
+}
+
+@media (max-width: 360px) {
+  .custom-bento-grid > div {
+    min-height: 100px;
+  }
+  
+  .bento-intro {
+    min-height: 160px;
+  }
+  
+  .bento-tech {
+    min-height: 140px;
+  }
+}
+
+.bento-intro { grid-area: intro; }
+.bento-photo { grid-area: photo; }
+.bento-stats1 { grid-area: stats1; }
+.bento-stats2 { grid-area: stats2; }
+.bento-tech { grid-area: tech; }
+.bento-social1 { grid-area: social1; }
+.bento-social2 { grid-area: social2; }
+.bento-projects { grid-area: projects; }
+.bento-languages { grid-area: languages; }
+.bento-status { grid-area: status; }
+.bento-contact { grid-area: contact; }
+.bento-github { grid-area: github; }
+
+/* Styles pour le mode sombre */
+@layer base {
+  html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  html.dark {
+    background-color: #0f172a;
+    color: #f8fafc;
+  }
+  
+  html.dark body {
+    background-color: #0f172a;
+    color: #f8fafc;
+  }
+}
+
+/* Animations personnalisées */
+@keyframes pulse-scale {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(2);
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-scale {
+  animation: pulse-scale 1s ease-in-out infinite;
+}
+
+/* Styles spécifiques pour la carte GitHub */
+.bento-github {
+  min-height: 220px;
+}
+
+@media (max-width: 768px) {
+  .bento-github {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bento-github {
+    min-height: 180px;
+  }
+}
+
+/* Styles pour la grille de contributions GitHub */
+.contribution-square {
+  transition: all 0.2s ease;
+}
+
+.contribution-square:hover {
+  transform: scale(1.15);
+  outline: 1px solid rgba(0,0,0,0.2);
+  z-index: 10;
+  position: relative;
+}
+
+/* Animation pour les barres du graphique */
+.bento-github .contribution-bar {
+  animation: growUp 0.6s ease-out forwards;
+  transform-origin: bottom;
+}
+
+@keyframes growUp {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* Hover effects pour les éléments interactifs */
+.bento-github .contribution-day:hover {
+  transform: scale(1.2);
+  z-index: 10;
+}
+
+.bento-github .month-bar:hover {
+  filter: brightness(1.1);
+}
+
+/* Animation de chargement pour la carte GitHub */
+.bento-github .loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Grille de contributions responsive */
+.contribution-grid {
+  display: grid;
+  grid-template-columns: repeat(53, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  gap: 2px;
+}
+
+@media (max-width: 768px) {
+  .contribution-grid {
+    gap: 1px;
+  }
+}
+
+/* Tooltip amélioré */
+.github-tooltip {
+  position: absolute;
+  z-index: 1000;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Améliorations pour le scroll snap et les performances */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
+  scroll-padding-top: 0;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.4s ease;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sections avec scroll snap optimisé */
+.scroll-section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+/* Smooth scroll pour les navigateurs qui ne supportent pas scroll-behavior */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Réduire les animations pour les utilisateurs qui préfèrent moins de mouvement */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
