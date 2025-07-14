@@ -35,6 +35,19 @@ Folio est un portfolio personnel moderne qui présente vos projets GitHub de man
 - **GitHub API** - Intégration des données GitHub
 - **WeatherAPI** - Service météorologique
 
+### 🐳 Architecture Docker
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Frontend      │    │    Backend      │    │     Redis       │
+│   (Nuxt.js)     │────│   (Express)     │────│    (Cache)      │
+│   Port: 3000    │    │   Port: 3001    │    │   Port: 6379    │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+```
+
+> **✨ Nouveau** : Le frontend utilise maintenant Nuxt.js directement (sans Nginx interne). 
+> Vous pouvez facilement ajouter Nginx sur votre serveur pour le SSL, la compression et le cache.
+
 ## 📁 Structure du Projet
 
 ```
@@ -110,6 +123,11 @@ docker-compose up -d
 docker-compose ps
 ```
 
+🌐 **Accès aux services :**
+- **Frontend** : `http://localhost:3000` (Application Nuxt.js)
+- **Backend API** : `http://localhost:3001` (API Express)
+- **Redis** : `localhost:6379` (Cache interne)
+
 ## 🔑 Configuration
 
 ### GitHub Token
@@ -148,6 +166,47 @@ cd frontend && vercel
 railway login
 railway link
 railway up
+```
+
+### 🌐 Déploiement avec Nginx (Production)
+
+Si vous déployez sur votre serveur avec Docker, voici une configuration Nginx recommandée :
+
+```nginx
+server {
+    listen 80;
+    server_name votre-domaine.com;
+
+    # Frontend Nuxt.js
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    # API Backend
+    location /api/ {
+        proxy_pass http://localhost:3001;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # Gestion des fichiers statiques avec cache
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2)$ {
+        proxy_pass http://localhost:3000;
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+}
 ```
 
 ## 📊 API Endpoints

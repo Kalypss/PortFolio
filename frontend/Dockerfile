@@ -1,5 +1,5 @@
-# Utiliser l'image Node.js pour construire l'application
-FROM node:20-alpine AS builder
+# Image Node.js pour l'application Nuxt en production
+FROM node:20-alpine
 
 # Définir le répertoire de travail
 WORKDIR /app
@@ -8,25 +8,21 @@ WORKDIR /app
 COPY package*.json ./
 
 # Installer les dépendances
-RUN npm ci
+RUN npm ci --only=production
 
 # Copier le reste du code source
 COPY . .
 
-# Construire l'application pour la production (static generation)
-RUN npm run generate
+# Construire l'application pour la production
+RUN npm run build
 
-# Image de production avec Nginx
-FROM nginx:alpine AS production
+# Exposer le port 3000
+EXPOSE 3000
 
-# Copier les fichiers générés statiquement depuis l'étape builder
-COPY --from=builder /app/.output/public /usr/share/nginx/html
+# Variables d'environnement
+ENV NODE_ENV=production
+ENV NUXT_HOST=0.0.0.0
+ENV NUXT_PORT=3000
 
-# Copier la configuration Nginx personnalisée
-COPY nginx.conf /etc/nginx/nginx.conf
-
-# Exposer le port 80
-EXPOSE 80
-
-# Démarrer Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Démarrer l'application Nuxt
+CMD ["npm", "run", "preview"]
