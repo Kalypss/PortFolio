@@ -24,5 +24,5 @@ ENV NODE_ENV=production
 ENV NUXT_HOST=0.0.0.0
 ENV NUXT_PORT=3000
 
-# Démarrer l'application Nuxt
-CMD ["npm", "run", "preview"]
+# Démarrer l'application Nuxt en mode production
+CMD ["node", ".output/server/index.mjs"]
