@@ -319,7 +319,7 @@ export const corsConfig = {
     }
     
     if (allowedOrigins.includes(origin)) {
-      callback(null, true);
+      callback(null, origin);
     } else {
       console.warn(`🚫 Origine CORS non autorisée: ${origin}`);
       callback(null, true); // Pour un portfolio, on reste permissif

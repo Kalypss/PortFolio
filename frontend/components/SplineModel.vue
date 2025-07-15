@@ -85,7 +85,7 @@ onMounted(() => {
   // S'assurer qu'on est côté client
   if (process.client) {
     // Vérifier si c'est un appareil mobile - NE PAS charger Spline sur mobile
-    const isMobile = window.innerWidth <= 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    const isMobile = window.innerWidth <= 1280 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
     
     if (isMobile) {
       console.log('Spline désactivé sur mobile pour optimiser les performances')
@@ -191,15 +191,9 @@ onUnmounted(() => {
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1380px) {
   .spline-container {
-    transform: scale(0.9);
-  }
-}
-
-@media (max-width: 992px) {
-  .spline-container {
-    transform: scale(0.8);
+    display: none !important; /* Complètement masqué sur mobile */
   }
 }
 

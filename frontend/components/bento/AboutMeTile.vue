@@ -46,7 +46,7 @@ const titleText = computed(() => {
 
 const descriptionText = computed(() => {
   return currentLanguage.value === 'fr' 
-    ? 'Étudiant passionné par la cybersécurité, je conçois des expériences numériques qui allient esthétique et performance, tout en garantissant une protection robuste. Mon objectif est de bâtir un web plus sûr, sans compromis sur le design.'
+    ? 'Étudiant passionné par la cybersécurité, je peux concevoir des environements numériques pour créer une expérience utilisateur exceptionnel qui allient esthétique et performance, tout en garantissant une protection robuste. Mon objectif est de bâtir un web plus sûr, sans compromis sur le design.'
     : 'As a student passionate about cybersecurity, I design digital experiences that blend aesthetics and performance while ensuring robust protection. My goal is to build a safer web without compromising on design.'
 })
 
@@ -194,7 +194,7 @@ const clickText = computed(() => {
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1380px) {
   .about-content {
     padding: 28px;
   }
@@ -205,30 +205,31 @@ const clickText = computed(() => {
   }
   
   .about-description p {
-    font-size: 15px;
+    font-size: 24px;
   }
 }
 
-@media (max-width: 992px) {
-  .about-content {
-    padding: 24px;
-  }
-  
-  .about-title {
-    font-size: 36px;
-    letter-spacing: -1px;
-  }
-  
-  .about-description p {
-    font-size: 16px;
-  }
-}
+
 
 @media (max-width: 768px) {
   .about-content {
     padding: 20px;
   }
+
+  .about-background{
+    opacity: 1;
+  }
   
+  .click-indicator {
+    opacity: 1;
+    transform: translateX(2px) translateY(10px);
+    color: white;
+  }
+
+  .about-tile:hover .click-indicator svg {
+  transform: translateX(0px) translateY(0px);
+  }
+
   .about-title {
     font-size: 32px;
     letter-spacing: -0.8px;
@@ -243,7 +244,15 @@ const clickText = computed(() => {
   .about-content {
     padding: 18px;
   }
-  
+ .about-background{
+    opacity: 1;
+  }
+
+  .click-indicator {
+    opacity: 0;
+  }
+
+
   .about-title {
     font-size: 28px;
     letter-spacing: -0.6px;

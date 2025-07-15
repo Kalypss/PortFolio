@@ -108,31 +108,30 @@ const nameText = computed(() => {
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1380px) {
   .me-content {
-    padding: 14px 18px;
-  }
-}
-
-@media (max-width: 992px) {
-  .me-content {
-    padding: 12px 16px;
+    padding: 6px 10px;
+    justify-content: center;
+    align-items: center;
   }
   
-}
-
-@media (max-width: 768px) {
-  .me-content {
-    padding: 10px 14px;
+  .profile-image-container {
+    height: 100%;
+    width: 100%;
+    transform: scale(1);
+    overflow: hidden;
+    position: relative;
   }
-  
   .greeting {
-    font-size: 8vw;
-  }
-  
-  .name {
-    font-size: 18vw;
-  }
+  font-family: 'DM Serif Display', serif;
+  font-size: 4vw;
+
+}
+
+.name {
+  font-family: 'DM Sans', serif;
+  font-size: 8vw;
+}
 }
 
 @media (max-width: 640px) {
@@ -147,7 +146,7 @@ const nameText = computed(() => {
   .name {
     font-size: 18vw;
     letter-spacing: -2px;
-    font-weight: 700;
+    font-weight: 400;
 
   }
 }

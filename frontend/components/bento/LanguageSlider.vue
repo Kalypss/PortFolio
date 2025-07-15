@@ -261,7 +261,7 @@ watch(sliderText, (newText) => {
 
 .slider-text {
   color: var(--text-primary);
-  font-size: 24px;
+  font-size: 1.3vw;
   font-weight: 500;
   text-align: center;
   z-index: 5;
@@ -291,7 +291,7 @@ watch(sliderText, (newText) => {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1380px) {
   .slider-thumb {
     width: 50px;
     height: 50px;

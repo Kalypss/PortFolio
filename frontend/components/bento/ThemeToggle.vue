@@ -139,7 +139,7 @@ const toggleTheme = () => {
 
 .toggle-text {
   color: var(--text-primary);
-  font-size: 24px ;
+  font-size: 1.3vw ;
   font-weight: 500;
   text-align: center;
   white-space: nowrap;
@@ -168,6 +168,17 @@ const toggleTheme = () => {
 }
 
 /* Responsive */
+@media (max-width: 1380px) {
+  .toggle-thumb {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .toggle-text {
+    font-size: 24pxpx;
+  }
+}
+
 @media (max-width: 768px) {
   .toggle-thumb {
     width: 40px;

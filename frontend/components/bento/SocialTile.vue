@@ -252,7 +252,7 @@ const openSocialLink = () => {
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1380px) {
   .social-content {
     padding: 18px;
   }
@@ -280,7 +280,7 @@ const openSocialLink = () => {
 
 @media (max-width: 992px) {
   .social-content {
-    padding: 16px;
+    padding: 18px;
   }
   
   .logo-image,
@@ -306,7 +306,7 @@ const openSocialLink = () => {
 
 @media (max-width: 768px) {
   .social-content {
-    padding: 14px;
+    padding: 18px;
   }
   
   .logo-image,
@@ -336,7 +336,7 @@ const openSocialLink = () => {
 
 @media (max-width: 640px) {
   .social-content {
-    padding: 12px;
+    padding: 18px;
   }
   
   .logo-image,

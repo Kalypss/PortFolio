@@ -189,64 +189,35 @@ const subtitleText = computed(() => {
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1380px) {
   .contact-content {
     padding: 28px;
   }
   
   .contact-title {
-    font-size: 36px;
+    font-size: 26px;
     letter-spacing: -0.7px;
   }
   
   .contact-subtitle {
-    font-size: 36px;
+    font-size: 48px;
     letter-spacing: -0.7px;
   }
   
   .email-text {
-    font-size: 13px;
+    font-size: 18px;
   }
-}
 
-@media (max-width: 992px) {
-  .contact-content {
-    padding: 24px;
-  }
-  
-  .contact-title {
-    font-size: 32px;
-    letter-spacing: -0.6px;
-  }
-  
-  .contact-subtitle {
-    font-size: 32px;
-    letter-spacing: -0.6px;
-  }
-  
-  .contact-email {
-    padding: 14px 18px;
-    gap: 6px;
-  }
-  
-  .mail-icon {
-    width: 18px;
-    height: 18px;
-  }
-  
-  .arrow-icon {
-    width: 14px;
-    height: 14px;
-    top: 6px;
-    right: 6px;
-  }
-  
-  .email-text {
-    font-size: 12px;
+  .contact-email{
+    margin-top: 30px;
   }
 }
 
 @media (max-width: 768px) {
+
+  .contact-header{
+    margin-top: 30px;
+  }
 
   .contact-content {
     padding: 10px;
@@ -255,19 +226,17 @@ const subtitleText = computed(() => {
   .contact-title {
     font-size: 28px;
     letter-spacing: -0.5px;
-    color: var(--bg-primary);
-
+    color: white;
   }
   
   .contact-subtitle {
     font-size: 36px;
     letter-spacing: -0.5px;
-    color: var(--bg-primary);
+    color: white;
   }
   
   .contact-email {
-    padding: 12px 16px;
-    gap: 6px;
+    margin-top: 0px;
   }
   
   .mail-icon {
@@ -283,7 +252,7 @@ const subtitleText = computed(() => {
   }
   
   .email-text {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .contact-background {
@@ -297,7 +266,6 @@ const subtitleText = computed(() => {
 
   .arrow-icon {
   opacity: 1;
-  transform: translate(-8px, 8px);
   }
 }
 
@@ -337,7 +305,7 @@ const subtitleText = computed(() => {
   }
   
   .email-text {
-    font-size: 11px;
+    font-size: 14px;
   }
 }
 
@@ -377,7 +345,7 @@ const subtitleText = computed(() => {
   }
   
   .email-text {
-    font-size: 10px;
+    font-size: 14px;
   }
 }
 </style>

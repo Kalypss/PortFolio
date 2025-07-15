@@ -182,18 +182,13 @@ onUnmounted(() => {
   }
   // Rétablir le scroll du body
   document.body.style.overflow = ''
-  // Optionnel : retirer le scroll snap si nécessaire
 })
 </script>
 
 <style scoped>
-.bento-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-}
 
 .bento-container {
-  display: flex;
+  display: absolute;
   height: 100vh;
   width: 100vw;
   align-items: center;
@@ -312,26 +307,8 @@ onUnmounted(() => {
   overflow: hidden;
 }
 
-/* Responsive */
-@media (max-width: 1200px) {
-  .bento-grid {
-    gap: 25px;
-    padding: 25px;
-  }
-}
 
-@media (max-width: 992px) {
-  .bento-grid {
-    gap: 22px;
-    padding: 22px;
-  }
-  
-  .tile p {
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1380px) {
   .bento-container {
     height: auto;
     padding: 10px 0;
@@ -355,45 +332,51 @@ onUnmounted(() => {
   
   /* Redistribution des tiles pour mobile */
   #top-tile { grid-column: span 4; grid-row: span 1; }
-  #me-tile { grid-column: span 4; grid-row: span 2; }
-  #linkedin-tile { grid-column: span 2; grid-row: span 2; }
-  #twitter-tile { grid-column: span 2; grid-row: span 2; }
-  #about-tile { grid-column: span 4; grid-row: span 3; }
-  #github-tile { grid-column: span 4; grid-row: span 2; }
-  #contact-tile { grid-column: span 4; grid-row: span 2; }
-  #project-tile { grid-column: span 4; grid-row: span 2; }
-  #theme-toggle-tile { grid-column: span 3; grid-row: span 1; }
-  #open-to-work-tile { grid-column: span 1; grid-row: span 2; }
-  #change-language-tile { grid-column: span 3; grid-row: span 1; }
+  #me-tile { grid-column: span 2; grid-row: span 2; }
+  #linkedin-tile { grid-column: span 1; grid-row: span 2; }
+  #twitter-tile { grid-column: span 1; grid-row: span 2; }
+  #about-tile { grid-column: span 2; grid-row: span 2; }
+  #github-tile { grid-column: span 2; grid-row: span 2; }
+  #contact-tile { grid-column: span 2; grid-row: span 2; }
+  #project-tile { grid-column: span 2; grid-row: span 1; }
+  #theme-toggle-tile { grid-column: span 2; grid-row: span 1; }
+  #open-to-work-tile { grid-column: span 2; grid-row: span 1; }
+  #change-language-tile { grid-column: span 2; grid-row: span 1; }
 }
 
 @media (max-width: 640px) {
+  .bento-container {
+    padding: 5px 0;
+  }
+  
   .bento-grid {
-    gap: 12px;
-    padding: 12px;
+    gap: 10px;
+    padding: 10px;
+    grid-template-columns: repeat(2, 1fr);
   }
   
   .tile {
-    min-height: 70px;
-    border-radius: 28px;
+    min-height: 60px;
+    border-radius: 24px;
   }
   
   .tile p {
-    font-size: 13px;
+    font-size: 12px;
+    font-weight: 400;
   }
   
   /* Layout encore plus compact pour petits mobiles */
-  #top-tile { grid-column: span 4; grid-row: span 1; }
-  #me-tile { grid-column: span 4; grid-row: span 2; }
-  #linkedin-tile { grid-column: span 2; grid-row: span 2; }
-  #twitter-tile { grid-column: span 2; grid-row: span 2; }
-  #about-tile { grid-column: span 4; grid-row: span 3; }
-  #github-tile { grid-column: span 4; grid-row: span 2; }
-  #contact-tile { grid-column: span 4; grid-row: span 2; }
-  #project-tile { grid-column: span 4; grid-row: span 2; }
-  #theme-toggle-tile { grid-column: span 2; grid-row: span 1; }
-  #open-to-work-tile { grid-column: span 2; grid-row: span 1; }
-  #change-language-tile { grid-column: span 4; grid-row: span 1; }
+  #top-tile { grid-column: span 2; grid-row: span 1; }
+  #me-tile { grid-column: span 2; grid-row: span 2; }
+  #linkedin-tile { grid-column: span 1; grid-row: span 2; }
+  #twitter-tile { grid-column: span 1; grid-row: span 2; }
+  #about-tile { grid-column: span 2; grid-row: span 3; }
+  #github-tile { grid-column: span 2; grid-row: span 2; }
+  #contact-tile { grid-column: span 2; grid-row: span 2; }
+  #project-tile { grid-column: span 2; grid-row: span 2; }
+  #theme-toggle-tile { grid-column: span 1; grid-row: span 1; }
+  #open-to-work-tile { grid-column: span 1; grid-row: span 1; }
+  #change-language-tile { grid-column: span 2; grid-row: span 1; }
 }
 
 @media (max-width: 480px) {

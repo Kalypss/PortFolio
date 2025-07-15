@@ -543,7 +543,7 @@ onMounted(async () => {
           </div>
           
           <!-- Spline Model 3D - masqué sur tablettes et mobiles pour les performances -->
-          <div class="hidden xl:flex items-end justify-end w-full max-w-lg h-full ml-24" style="max-width:800px;">
+          <div class="hidden xl:flex items-end justify-end w-full max-w-lg h-full" style="max-width:1580px;">
             <ClientOnly>
               <div style="width:100%;height:100%;max-width:1200px;">
                 <LazySplineModel />
@@ -795,39 +795,6 @@ onMounted(async () => {
   transition: background 0.5s ease;
 }
 
-/* Configuration du scroll snap pour le conteneur principal */
-.portfolio-container {
-  height: 100vh;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-}
-
-/* Configuration des sections snap - seulement sur desktop */
-@media (min-width: 769px) {
-  .portfolio-container {
-    scroll-snap-type: y mandatory;
-  }
-  
-  .hero-section {
-    scroll-snap-align: start;
-    scroll-snap-stop:  normal;
-  }
-  
-  .bento-section {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  }
-  
-  .projects-section {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  }
-  
-  .footer-section {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  }
-}
 
 /* Assurer que chaque section prend exactement la hauteur de l'écran */
 .hero-section,

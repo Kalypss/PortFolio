@@ -215,18 +215,28 @@ const subtitleText = computed(() => {
 /* Point de statut avec animation pulse */
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1380px) {
   .title {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   
+  .open-to-work-container{
+      padding: 15px;
+  }
+
+  .content{
+    padding-left: 10px;
+    padding-bottom: 5px;
+  }
+
   .subtitle {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
   
   .status-indicator {
     width: 20px;
     height: 20px;
+    
   }
   
   .status-dot {
