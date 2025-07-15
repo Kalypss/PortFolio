@@ -29,7 +29,7 @@ export function useGitHub(username = 'Kalypss') {
 
       console.log(`Récupération des données GitHub pour ${username}...`)
 
-      const response = await fetch(`/api/github/${username}`)
+      const response = await fetch(`https://${BACKEND_URL}/api/github/${username}`)
       
       if (!response.ok) {
         const errorData = await response.json()

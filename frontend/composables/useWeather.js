@@ -6,6 +6,10 @@ export const useWeather = () => {
   const error = ref(null)
   const currentCity = ref('')
 
+
+  const BACKEND_URL = 'api.floriansilva.dev'
+
+
   const fetchWeather = async (city) => {
     if (!city || city.trim() === '') {
       error.value = 'Veuillez entrer une ville'
@@ -16,7 +20,7 @@ export const useWeather = () => {
     error.value = null
 
     try {
-      const response = await $fetch(`/api/weather/${encodeURIComponent(city)}`)
+      const response = await $fetch(`https://${BACKEND_URL}/api/weather/${encodeURIComponent(city)}`)
       
       if (!response.ok) {
         const errorData = await response.json()
