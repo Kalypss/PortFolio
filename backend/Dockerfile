@@ -20,9 +20,6 @@ COPY . .
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S backend -u 1001
 
-# Changer la propriété des fichiers
-RUN chown -R backend:nodejs /app
-
 # Changer vers l'utilisateur non-root
 USER backend
 

@@ -571,73 +571,7 @@ onMounted(async () => {
       </section>
 
       <!-- Section des projets avec carrousel (toujours après le bento) -->
-      <section id="project-section" class="projects-section w-full min-h-screen bg-[var(--bg-primary)] transition-colors duration-300 py-12 px-2 sm:px-4 md:px-6 lg:px-10 lg:py-20">
-        <div class="max-w-7xl mx-auto">
-          <h3 class="font-semibold text-[var(--text-primary)] text-center tracking-[-1px] text-[clamp(1.2rem,5vw,1.8rem)] sm:text-[clamp(1.6rem,4vw,2rem)] md:text-[clamp(1.8rem,4vw,2.5rem)] lg:text-[clamp(2rem,5vw,3rem)] mb-6 sm:mb-8 md:mb-12 lg:mb-15 transition-colors duration-300">
-            Mes Projets
-          </h3>
-          <!-- Carrousel des projets -->
-          <div class="carousel-container relative w-full max-w-full sm:max-w-4xl mx-auto">
-            <!-- Indicateurs de navigation -->
-            <div class="carousel-indicators flex justify-center mb-8 gap-3">
-              <button 
-                v-for="(project, index) in projects" 
-                :key="project.id"
-                @click="goToSlide(index)"
-                :class="['indicator', { 'active': (currentSlide - numClones) % projects.length === index }]"
-                class="w-2 h-2 rounded-full transition-all duration-300"
-              ></button>
-            </div>
-            <!-- Container des slides -->
-            <div 
-              class="carousel-wrapper overflow-x-auto overflow-y-visible w-full" 
-              style="-webkit-overflow-scrolling: touch;"
-              @touchstart="handleTouchStart"
-              @touchmove="handleTouchMove"
-              @touchend="handleTouchEnd"
-            >
-              <div ref="carouselTrack" class="carousel-track flex transition-transform duration-500 ease-out w-full" style="min-width: 100%;">
-                <div 
-                  v-for="project in clonedProjects" 
-                  :key="project.id"
-                  class="carousel-slide flex-shrink-0 flex justify-center px-1 sm:px-4"
-                  style="width: 80vw; max-width: 420px;"
-                >
-                  <div class="project-card-container max-w-md w-full">
-                    <ProjectCard
-                      :title="project.title"
-                      :description="project.description"
-                      :status="project.status"
-                      :technologies="project.technologies"
-                      :technologiesIcons="project.technologiesIcons"
-                      :techLabelColor="project.techLabelColor"
-                      :imageUrl="project.imageUrl"
-                      :link="project.link"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Boutons de navigation -->
-            <button 
-              @click="previousSlide"
-              class="carousel-nav carousel-prev absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-            <button 
-              @click="nextSlide"
-              class="carousel-nav carousel-next absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </section>
+      
 
       <!-- Footer -->
       <footer class="footer-section w-full bg-[var(--bg-secondary)] transition-colors duration-300">

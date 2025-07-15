@@ -34,9 +34,6 @@ COPY --from=builder /app/package*.json ./
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S nuxt -u 1001
 
-# Changer les permissions des fichiers
-RUN chown -R nuxt:nodejs /app
-
 USER nuxt
 
 # Exposer le port 3000
