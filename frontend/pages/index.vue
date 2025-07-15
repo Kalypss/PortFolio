@@ -2,6 +2,35 @@
 import { ref, onMounted, computed, watch, onUnmounted, nextTick } from 'vue';
 import { useTheme } from '~/composables/useTheme';
 
+// SEO et données structurées
+useHead({
+  title: 'Florian Silva - Développeur Full-Stack Créatif',
+  meta: [
+    { name: 'description', content: 'Portfolio de Florian Silva, développeur web Full-Stack spécialisé en Vue.js, Nuxt.js et Node.js. Découvrez mes projets innovants et mon approche créative du développement.' }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        'name': 'Florian Silva',
+        'url': 'https://floriansilva.dev',
+        'jobTitle': 'Développeur Full-Stack',
+        'worksFor': {
+          '@type': 'Organization',
+          'name': 'Florian Silva'
+        },
+        'sameAs': [
+          'https://github.com/Kalypss',
+          'https://www.linkedin.com/in/florian-silva-139ba4374/',
+          'https://x.com/K4lyps'
+        ]
+      })
+    }
+  ]
+});
+
 // Initialiser le thème
 const { initTheme } = useTheme();
 
@@ -151,58 +180,45 @@ const isTransitioning = ref(false);
 const projects = ref([
   {
     id: 1,
-    title: "Gofindr",
-    description: "A brand new search engine which respect private life.",
+    title: "Logon",
+    description: {
+      fr: "Plateforme e-commerce moderne avec fonctionnalités avancées et une interface utilisateur soignée.",
+      en: "Modern e-commerce platform with advanced features and a beautiful UI."
+    },
     status: "In Progress",
-    technologies: ['Full Stack', 'Docker'],
-    technologiesIcons: ['/tech-icons/fullstack.svg', '🐳'],
+    technologies: ['Vue.js', 'Nuxt'],
+    technologiesIcons: ['/tech-icons/vue.svg', '🚀'],
     techLabelColor: "#4FC08D",
-    imageUrl: "",
-    link: "https://github.com/username/gofindr"
+    imageUrl: "/assets/LogOn.png", // Image retirée
+    link: "https://github.com/Kalypss/Logon"
   },
   {
     id: 2,
-    title: "Logon",
-    description: "Modern e-commerce platform with advanced features and beautiful UI.",
+    title: "QR Code Gen",
+    description: {
+      fr: "Générateur de QR codes personnalisables avec prévisualisation en temps réel.",
+      en: "Customizable QR code generator with real-time preview."
+    },
     status: "Completed",
-    technologies: ['Vue.js', 'Nuxt'],
-    technologiesIcons: ['/tech-icons/vue.svg', '🚀'],
-    techLabelColor: "#3178C6",
-    imageUrl: "",
-    link: "https://github.com/username/ecommerce"
+    technologies: ['React', 'CSS'],
+    technologiesIcons: ['/tech-icons/react.svg', '🎨'],
+    techLabelColor: "#F7DF1E",
+    imageUrl: "/assets/QRCode.png", // Image retirée
+    link: "https://github.com/Kalypss/QRCode-Gen"
   },
   {
     id: 3,
-    title: "AI Dashboard",
-    description: "Dashboard intelligent avec analytics en temps réel et machine learning.",
+    title: "NotePad",
+    description: {
+      fr: "Application de prise de notes simple et rapide avec sauvegarde locale et interface minimaliste.",
+      en: "Simple and fast note-taking app with local storage and a minimalist interface."
+    },
     status: "In Progress",
-    technologies: ['Python', 'React', 'AI'],
-    technologiesIcons: ['🐍', '⚛️', '🤖'],
-    techLabelColor: "#3776AB",
-    imageUrl: "",
-    link: "https://github.com/username/ai-dashboard"
-  },
-  {
-    id: 4,
-    title: "Portfolio 3D",
-    description: "Portfolio interactif avec animations 3D et effets immersifs.",
-    status: "Completed",
-    technologies: ['Vue.js', 'Three.js', 'GSAP'],
-    technologiesIcons: ['/tech-icons/vue.svg', '🎮', '✨'],
-    techLabelColor: "#4FC08D",
-    imageUrl: "",
-    link: "https://github.com/username/portfolio"
-  },
-  {
-    id: 5,
-    title: "Task Manager",
-    description: "Application de gestion de tâches avec collaboration en temps réel.",
-    status: "In Progress",
-    technologies: ['React', 'Node.js', 'Socket.io'],
-    technologiesIcons: ['⚛️', '🟢', '🔗'],
+    technologies: ['React', 'Vite'],
+    technologiesIcons: ['/tech-icons/react.svg', '⚡️'],
     techLabelColor: "#61DAFB",
-    imageUrl: "",
-    link: "https://github.com/username/task-manager"
+    imageUrl: "/assets/NotePad.png", // Image retirée
+    link: "https://github.com/Kalypss/NotePad"
   }
 ]);
 
@@ -597,7 +613,6 @@ onMounted(async () => {
                       :techLabelColor="project.techLabelColor"
                       :imageUrl="project.imageUrl"
                       :link="project.link"
-                      theme="dark"
                     />
                   </div>
                 </div>
@@ -740,7 +755,7 @@ onMounted(async () => {
           <!-- Footer bottom -->
           <div class="border-t border-[var(--border-color)] mt-12 pt-8 text-center">
             <p class="text-[var(--text-secondary)] text-sm transition-colors duration-300">
-              © {{ new Date().getFullYear() }} Florian Silva. Tous droits réservés. Fait avec TailwindCSS et Vue.js
+              © {{ new Date().getFullYear() }} Florian Silva. Ce site et son contenu sont la propriété intellectuelle de Florian Silva.
             </p>
           </div>
         </div>
@@ -949,27 +964,38 @@ onMounted(async () => {
 
 /* Boutons de navigation - sans bordure ni fond */
 .carousel-nav {
-  background: none;
+  background-color: var(--dynamic-bg, rgba(255, 255, 255, 0.7)); /* Fallback pour le blanc */
   border: none;
   width: 44px;
   height: 44px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--bg-primary);
-  transition: none; /* Pas d'animation hover */
+  color: var(--dynamic-color, #000000); /* Fallback pour le noir */
+  transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
   cursor: pointer;
   z-index: 10;
   opacity: 0.8;
 }
 
 .carousel-nav:hover {
-  /* Pas d'effet hover */
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .carousel-nav:active {
   opacity: 0.6;
+}
+
+/* Variables pour le thème */
+html[data-theme='dark'] .carousel-nav {
+  --dynamic-bg: rgba(255, 255, 255, 0.4);
+  --dynamic-color: #000000;
+}
+
+html[data-theme='light'] .carousel-nav {
+  --dynamic-bg: rgba(0, 0, 0, 0.4);
+  --dynamic-color: #ffffff;
 }
 
 /* Adaptation mobile pour le carrousel */

@@ -46,8 +46,8 @@ const titleText = computed(() => {
 
 const descriptionText = computed(() => {
   return currentLanguage.value === 'fr' 
-    ? 'Développeur Full-Stack passionné par la création d\'expériences numériques innovantes et engageantes. Spécialisé dans les technologies web modernes, j\'aime transformer des idées complexes en solutions élégantes et performantes.\n\nAvec une approche centrée sur l\'utilisateur, je conçois des interfaces intuitives qui allient esthétique moderne et fonctionnalité optimale. Mon objectif est de créer des produits digitaux qui marquent et inspirent.'
-    : 'Passionate Full-Stack Developer dedicated to creating innovative and engaging digital experiences. Specialized in modern web technologies, I love transforming complex ideas into elegant and performant solutions.\n\nWith a user-centered approach, I design intuitive interfaces that combine modern aesthetics with optimal functionality. My goal is to create digital products that make a lasting impact and inspire.'
+    ? 'Étudiant passionné par la cybersécurité, je conçois des expériences numériques qui allient esthétique et performance, tout en garantissant une protection robuste. Mon objectif est de bâtir un web plus sûr, sans compromis sur le design.'
+    : 'As a student passionate about cybersecurity, I design digital experiences that blend aesthetics and performance while ensuring robust protection. My goal is to build a safer web without compromising on design.'
 })
 
 const clickText = computed(() => {

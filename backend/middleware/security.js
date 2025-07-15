@@ -304,10 +304,10 @@ export const corsConfig = {
       'https://folio-frontend:3000',
       'http://folio-frontend:3000',
       // Production domains
-      'https://portfolio.gofindr.fr',
-      'http://portfolio.gofindr.fr',
-      'https://api-portfolio.gofindr.fr',
-      'http://api-portfolio.gofindr.fr'
+      'https://floriansilva.dev',
+      'http://floriansilva.dev',
+      'https://api.floriansilva.dev',
+      'http://api.floriansilva.dev'
     ];
     
     // Autoriser les requêtes sans origine (ex: applications mobiles, Postman)

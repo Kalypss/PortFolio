@@ -62,7 +62,7 @@ const startNumberAnimation = () => {
     
     // Appliquer l'easing pour obtenir la progression non-linéaire
     const easedProgress = easeInOutCubic(progress)
-    const targetNumber = Math.floor(easedProgress * 5) // Changé de 3 à 5 pour correspondre aux 5 projets
+    const targetNumber = Math.floor(easedProgress * 3) // Changé de 3 à 5 pour correspondre aux 5 projets
     
     if (targetNumber > current) {
       current = targetNumber
