@@ -243,7 +243,8 @@ app.get('/api/weather/:city',
       return res.json(cachedWeather);
     }
     
-    const API_KEY = '90ba3eded8e74d88a5a194946250207'; // Votre clé API WeatherAPI
+    // const API_KEY = process.env.WEATHER_API; // Votre clé API WeatherAPI
+    const API_KEY = process.env.WEATHER_API_KEY; // Votre clé API WeatherAPI
     
     // Faire la requête à l'API WeatherAPI
     const response = await axios.get(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}&aqi=no`);
