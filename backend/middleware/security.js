@@ -293,14 +293,21 @@ export const corsConfig = {
   origin: function (origin, callback) {
     // Pour un portfolio, on est plus permissif
     const allowedOrigins = [
+      // Développement local
       'http://localhost:3000',
       'http://127.0.0.1:3000',
       'http://localhost:3001',
       'http://127.0.0.1:3001',
       'http://localhost:8080',
       'http://127.0.0.1:8080',
-      'https://folio-frontend:3000', // Docker
-      'http://folio-frontend:3000'   // Docker
+      // Docker
+      'https://folio-frontend:3000',
+      'http://folio-frontend:3000',
+      // Production domains
+      'https://portfolio.gofindr.fr',
+      'http://portfolio.gofindr.fr',
+      'https://api-portfolio.gofindr.fr',
+      'http://api-portfolio.gofindr.fr'
     ];
     
     // Autoriser les requêtes sans origine (ex: applications mobiles, Postman)
