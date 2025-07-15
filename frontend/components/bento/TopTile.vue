@@ -43,7 +43,7 @@
       <!-- Affichage météo -->
       <div v-else class="weather-display">
         <img 
-          :src="`http://localhost:3001/weather-icons/${weatherData.current.icon}`" 
+          :src="`https://api.floriansilva.dev/weather-icons/${weatherData.current.icon}`" 
           :alt="weatherData.current.condition"
           class="weather-icon"
         />

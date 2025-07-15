@@ -891,20 +891,16 @@ onMounted(async () => {
 /* Adaptations spécifiques pour mobile */
 @media (max-width: 768px) {
   .carousel-wrapper {
-    border-radius: 16px;
-    margin: 0 auto;
-    max-width: 350px;
+    overflow: hidden; /* Assure que les autres cartes sont masquées */
   }
   
   .carousel-slide {
-    min-height: 480px;
-    padding: 0 4px;
-    width: 100%;
+    width: 100%; /* Chaque slide prend toute la largeur */
+    padding: 0 16px; /* Ajoute un peu d'espace sur les côtés */
   }
-  
+
   .project-card-container {
-    max-width: 320px !important;
-    width: 100% !important;
+    width: 100%;
   }
 }
 
