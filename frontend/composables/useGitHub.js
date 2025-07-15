@@ -19,7 +19,7 @@ export function useGitHub(username = 'Kalypss') {
   })
 
   // URL du backend via le proxy Nginx
-  const BACKEND_URL = ''
+  const BACKEND_URL = 'api.floriansilva.dev'
 
   // Fonction principale pour récupérer toutes les données depuis le backend
   const fetchGitHubData = async () => {

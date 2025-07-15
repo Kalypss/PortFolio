@@ -94,7 +94,7 @@ export default defineNuxtConfig({
   // Configuration runtime
   runtimeConfig: {
     public: {
-      apiBase: process.env.API_BASE_URL || 'http://localhost:3001'
+      apiBase: process.env.API_BASE_URL || 'http://localhost:3001' || "api.floriansilva.dev"
     }
   },
   

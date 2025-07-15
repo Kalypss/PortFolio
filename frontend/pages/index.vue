@@ -342,7 +342,7 @@ const loadGitHubData = async () => {
   if (process.client && window.innerWidth >= 1280) {
     try {
       const { useGitHub } = await import('~/composables/useGitHub.js');
-      const gitHubComposable = useGitHub('Achig4tsu');
+      const gitHubComposable = useGitHub('Kalypss');
       
       if (gitHubComposable && gitHubComposable.githubData) {
         // Surveiller les changements des données GitHub

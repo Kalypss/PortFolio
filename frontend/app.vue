@@ -16,7 +16,7 @@
       <Meta property="og:title" content="Silva Florian - Portfolio Développeur Full Stack" />
       <Meta property="og:description" content="Portfolio de Silva Florian, développeur full stack spécialisé en Vue.js, Nuxt.js et technologies modernes." />
       <Meta property="og:image" content="/social/og-image.png" />
-      <Meta property="og:url" content="https://portfolio.gofindr.fr" />
+      <Meta property="og:url" content="https://floriansilva.dev" />
       <Meta property="og:site_name" content="Portfolio Silva Florian" />
       
       <!-- Twitter -->
