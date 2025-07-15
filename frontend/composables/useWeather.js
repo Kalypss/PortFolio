@@ -16,7 +16,7 @@ export const useWeather = () => {
     error.value = null
 
     try {
-      const response = await fetch(`/api/weather/${encodeURIComponent(city)}`)
+      const response = await $fetch(`/api/weather/${encodeURIComponent(city)}`)
       
       if (!response.ok) {
         const errorData = await response.json()
