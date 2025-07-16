@@ -129,7 +129,7 @@ onUnmounted(() => {
 
 .modal-title {
   margin: 0;
-  font-size: 22px;
+  font-size: big;
   font-weight: 700;
   color: var(--text-primary);
 }
@@ -201,45 +201,56 @@ onUnmounted(() => {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@screen laptop {
+  .modal-container {
+    width: 95vw;
+    max-width: 800px;
+    height: 80vh;
+    max-height: 600px;
+  }
+  .modal-header {
+    padding: 28px;
+  }
+  .modal-title {
+    font-size: laptop-big;
+  }
+  .modal-content {
+    padding: 28px;
+  }
+}
+
+@screen tablet {
   .modal-container {
     width: 95vw;
     height: 90vh;
     border-radius: 28px;
   }
-  
   .modal-header {
-    padding: 20px 24px;
+    padding: 24px;
   }
-  
   .modal-title {
-    font-size: 20px;
+    font-size: tablet-big;
   }
-  
   .modal-content {
     padding: 24px;
   }
 }
 
-@media (max-width: 480px) {
+@screen phone {
   .modal-overlay {
     padding: 10px;
   }
-  
   .modal-container {
     width: 100%;
     height: 95vh;
     border-radius: 24px;
   }
-  
   .modal-header {
-    padding: 16px 20px;
+    padding: 20px;
   }
-  
   .modal-title {
-    font-size: 18px;
+    font-size: phone-big;
   }
-  
   .modal-content {
     padding: 20px;
   }

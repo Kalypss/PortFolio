@@ -38,13 +38,10 @@
           <ContactTile />
         </div>
       
-        <div id="github-tile" class="tile tile-span-4-2 tile-animate" data-delay="450">
+        <div id="github-tile" class="tile tile-span-6-2 tile-animate" data-delay="450">
           <GitHubTile />
         </div>
-      
-        <div id="project-tile" class="tile tile-span-2-2 tile-animate" data-delay="500">
-          <ProjectComponent />
-        </div>
+    
       
         <div id="theme-toggle-tile" class="tile tile-span-3-1 tile-animate" data-delay="550">
           <ThemeToggle 
@@ -188,15 +185,14 @@ onUnmounted(() => {
 <style scoped>
 
 .bento-container {
-  display: absolute;
-  height: 100vh;
-  width: 100vw;
+  display: flex; /* Keep flexbox for centering content if needed */
   align-items: center;
   justify-content: center;
   margin: 0;
   padding: 0;
   background: var(--bg-primary);
   transition: background 0.3s ease;
+  min-width: 360px;
 }
 
 .bento-grid {
@@ -257,6 +253,7 @@ onUnmounted(() => {
 
 /* Grille spans */
 .tile-span-10-1 { grid-column: span 10; grid-row: span 1; }
+.tile-span-6-2 {grid-column: span 6; grid-row: span 2}
 .tile-span-4-1 { grid-column: span 4; grid-row: span 1; }
 .tile-span-2-5 { grid-column: span 2; grid-row: span 5; }
 .tile-span-2-2 { grid-column: span 2; grid-row: span 2; }
@@ -315,7 +312,7 @@ onUnmounted(() => {
   }
   
   .bento-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     grid-template-rows: auto;
     gap: 15px;
     padding: 15px;
@@ -330,18 +327,17 @@ onUnmounted(() => {
     font-size: 14px;
   }
   
-  /* Redistribution des tiles pour mobile */
-  #top-tile { grid-column: span 4; grid-row: span 1; }
-  #me-tile { grid-column: span 2; grid-row: span 2; }
-  #linkedin-tile { grid-column: span 1; grid-row: span 2; }
-  #twitter-tile { grid-column: span 1; grid-row: span 2; }
-  #about-tile { grid-column: span 2; grid-row: span 2; }
-  #github-tile { grid-column: span 2; grid-row: span 2; }
-  #contact-tile { grid-column: span 2; grid-row: span 2; }
-  #project-tile { grid-column: span 2; grid-row: span 1; }
-  #theme-toggle-tile { grid-column: span 2; grid-row: span 1; }
-  #open-to-work-tile { grid-column: span 2; grid-row: span 1; }
-  #change-language-tile { grid-column: span 2; grid-row: span 1; }
+  /* Redistribution des tiles pour laptop */
+  #top-tile { grid-column: 1 / span 8; grid-row: 1; }
+  #about-tile { grid-column: 1 / span 8; grid-row: 2 / span 2; }
+  #linkedin-tile { grid-column: 1 / span 3; grid-row: 4 / span 2; }
+  #me-tile { grid-column: 4 / span 2; grid-row: 4 / span 2; }
+  #twitter-tile { grid-column: 6 / span 3; grid-row: 4 / span 2; }
+  #contact-tile { grid-column: 1 / span 8; grid-row: 6 / span 2; }
+  #github-tile { grid-column: 1 / span 8; grid-row: 8 / span 2; }
+  #theme-toggle-tile { grid-column: 1 / span 6; grid-row: 10 / span 1; }
+  #change-language-tile { grid-column: 1 / span 6; grid-row: 11 / span 1; }
+  #open-to-work-tile { grid-column: 7 / span 2; grid-row: 10 / span 2; }
 }
 
 @media (max-width: 640px) {

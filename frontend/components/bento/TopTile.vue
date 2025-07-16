@@ -198,14 +198,14 @@ onUnmounted(() => {
 }
 
 .current-time {
-  font-size: 20px;
+  font-size: var(--font-medium);
   font-weight: 600;
   color: var(--text-primary);
   letter-spacing: -1px;
 }
 
 .current-date {
-  font-size: 20px;
+  font-size: var(--font-medium);
   font-weight: 600;
   color: var(--text-primary);
   text-align: right;
@@ -251,7 +251,7 @@ onUnmounted(() => {
   border: none;
   outline: none;
   color: var(--text-primary);
-  font-size: 15px;
+  font-size: var(--font-small);
   font-weight: 500;
   width: 220px;
 }
@@ -265,7 +265,7 @@ onUnmounted(() => {
   background: transparent;
   border: none;
   color: var(--text-primary);
-  font-size: 16px;
+  font-size: var(--font-small);
   cursor: pointer;
   transition: all 0.3s ease;
   padding: 4px;
@@ -296,7 +296,7 @@ onUnmounted(() => {
 }
 
 .weather-error {
-  font-size: 12px;
+  font-size: var(--font-smaller);
   color: #ff4444;
   margin: 0;
   padding: 4px 8px;
@@ -330,7 +330,7 @@ onUnmounted(() => {
 }
 
 .weather-temp {
-  font-size: 18px;
+  font-size: var(--font-size-medium);
   font-weight: 700;
   color: var(--text-primary);
   min-width: 40px;
@@ -338,7 +338,7 @@ onUnmounted(() => {
 }
 
 .weather-condition {
-  font-size: 18px;
+  font-size: var(--font-size-medium);
   color: var(--text-primary);
   font-weight: 500;
   white-space: nowrap;
@@ -347,7 +347,7 @@ onUnmounted(() => {
 }
 
 .weather-location {
-  font-size: 18px;
+  font-size: var(--font-size-medium);
   color: var(--text-secondary);
   font-weight: 500;
   white-space: nowrap;
@@ -377,6 +377,53 @@ onUnmounted(() => {
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+  .top-tile {
+    padding: 0 30px;
+  }
+  
+  .current-time {
+    font-size: var(--font-laptop-medium);
+  }
+  
+  .current-date {
+    font-size: var(--font-laptop-medium);
+  }
+  
+  .city-input {
+    width: 180px;
+    font-size: var(--font-laptop-small);
+  }
+  
+  .weather-temp, .weather-condition, .weather-location {
+    font-size: var(--font-laptop-small);
+  }
+  
+  .weather-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .weather-display {
+    padding: 10px 16px;
+    gap: 12px;
+  }
+  
+  .weather-info {
+    gap: 10px;
+  }
+  
+  .city-form {
+    padding: 10px 16px;
+    gap: 10px;
+  }
+  
+  .weather-close {
+    width: 30px;
+    height: 30px;
+  }
+}
+
 @media (max-width: 768px) {
   .top-tile {
     padding: 0 16px;
@@ -392,20 +439,20 @@ onUnmounted(() => {
   }
   
   .current-time {
-    font-size: 16px;
+    font-size: var(--font-tablet-small);
   }
   
   .current-date {
-    font-size: 16px;
+    font-size: var(--font-tablet-small);
   }
   
   .city-input {
     width: 140px;
-    font-size: 14px;
+    font-size: var(--font-tablet-small);
   }
   
   .weather-temp, .weather-condition, .weather-location {
-    font-size: 15px;
+    font-size: var(--font-tablet-small);
   }
   
   .weather-icon {
@@ -433,66 +480,9 @@ onUnmounted(() => {
   }
 }
 
-@media (max-width: 600px) {
-  .top-tile {
-    padding: 0 12px;
-  }
-  
-  .current-time {
-    font-size: 14px;
-  }
-  
-  .current-date {
-    font-size: 14px;
-  }
-  
-  .time-container, .date-container {
-    gap: 4px;
-  }
-  
-  .time-icon, .date-icon {
-    width: 14px;
-    height: 14px;
-  }
-  
-  .city-input {
-    width: 120px;
-    font-size: 13px;
-  }
-  
-  .weather-temp, .weather-condition, .weather-location {
-    font-size: 14px;
-  }
-  
-  .weather-icon {
-    width: 28px;
-    height: 28px;
-  }
-  
-  .weather-display {
-    padding: 6px 10px;
-    gap: 8px;
-  }
-  
-  .weather-info {
-    gap: 8px;
-  }
-  
-  .city-form {
-    padding: 6px 10px;
-    gap: 8px;
-  }
-  
-  .weather-close {
-    width: 26px;
-    height: 26px;
-  }
-}
-
 @media (max-width: 480px) {
   .top-tile {
     padding: 0 8px;
-    /* Maintenir le layout horizontal : heure à gauche, input au centre, date à droite */
   }
   
   .top-tile-left, .top-tile-right {
@@ -504,11 +494,11 @@ onUnmounted(() => {
   }
   
   .current-time {
-    font-size: 12px;
+    font-size: var(--font-phone-small);
   }
   
   .current-date {
-    font-size: 12px;
+    font-size: var(--font-phone-small);
     text-align: right;
   }
   
@@ -525,15 +515,15 @@ onUnmounted(() => {
   
   .city-input {
     width: 100px;
-    font-size: 12px;
+    font-size: var(--font-phone-small);
   }
   
   .weather-temp {
-    font-size: 13px;
+    font-size: var(--font-phone-small);
   }
   
   .weather-condition, .weather-location {
-    font-size: 12px;
+    font-size: var(--font-phone-smaller);
   }
   
   .weather-icon {
@@ -574,70 +564,6 @@ onUnmounted(() => {
   .city-submit svg {
     width: 12px;
     height: 12px;
-  }
-}
-
-@media (max-width: 360px) {
-  .top-tile {
-    padding: 0 6px;
-  }
-  
-  .current-time, .current-date {
-    font-size: 11px;
-  }
-  
-  .city-input {
-    width: 80px;
-    font-size: 11px;
-  }
-  
-  .weather-temp {
-    font-size: 12px;
-  }
-  
-  .weather-condition, .weather-location {
-    font-size: 11px;
-  }
-  
-  .weather-icon {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .weather-display {
-    padding: 3px 6px;
-    gap: 4px;
-  }
-  
-  .weather-info {
-    gap: 4px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .weather-temp {
-    font-size: 12px;
-    min-width: auto;
-  }
-  
-  .weather-condition {
-    font-size: 11px;
-    max-width: 60px;
-  }
-  
-  .weather-location {
-    font-size: 11px;
-    max-width: 60px;
-  }
-  
-  .city-form {
-    padding: 3px 6px;
-    gap: 4px;
-  }
-  
-  .weather-close {
-    width: 20px;
-    height: 20px;
   }
 }
 </style>

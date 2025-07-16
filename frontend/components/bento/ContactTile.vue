@@ -62,7 +62,6 @@ const subtitleText = computed(() => {
   height: 100%;
   position: relative;
   overflow: hidden;
-  cursor: pointer;
   border-radius: 38px;
   background: var(--bg-header);
   transition: all 0.3s ease;
@@ -112,7 +111,7 @@ const subtitleText = computed(() => {
 
 .contact-title {
   font-family: 'DM Serif Display', sans-serif;
-  font-size: 30px;
+  font-size: var(--font-big);
   font-weight: 400;
   color: var(--text-primary);
   margin: 0;
@@ -123,7 +122,7 @@ const subtitleText = computed(() => {
 
 .contact-subtitle {
   font-family: 'DM Sans', sans-serif;
-  font-size: 50px;
+  font-size: var(--font-huge);
   font-weight: 600;
   color: var(--text-primary);
   margin: 0;
@@ -149,6 +148,8 @@ const subtitleText = computed(() => {
   gap: 8px;
   position: relative;
   text-decoration: none;
+  cursor: pointer;
+
 }
 
 .contact-email.hovered {
@@ -179,7 +180,7 @@ const subtitleText = computed(() => {
 
 .email-text {
   font-family: 'DM Sans', sans-serif;
-  font-size: 18px;
+  font-size: medium;
   font-weight: 500;
   color: var(--bg-primary);
   letter-spacing: -0.5px;
@@ -189,23 +190,23 @@ const subtitleText = computed(() => {
 }
 
 /* Responsive */
-@media (max-width: 1380px) {
+@media (max-width: 1200px) {
   .contact-content {
     padding: 28px;
   }
   
   .contact-title {
-    font-size: 26px;
+    font-size: var(--font-laptop-medium);
     letter-spacing: -0.7px;
   }
   
   .contact-subtitle {
-    font-size: 48px;
+    font-size: var(--font-laptop-huge);
     letter-spacing: -0.7px;
   }
   
   .email-text {
-    font-size: 18px;
+    font-size: var(--font-laptop-medium);
   }
 
   .contact-email{
@@ -224,13 +225,13 @@ const subtitleText = computed(() => {
   }
   
   .contact-title {
-    font-size: 28px;
+    font-size: var(--font-tablet-medium);
     letter-spacing: -0.5px;
     color: white;
   }
   
   .contact-subtitle {
-    font-size: 36px;
+    font-size: var(--font-tablet-huge);
     letter-spacing: -0.5px;
     color: white;
   }
@@ -252,7 +253,7 @@ const subtitleText = computed(() => {
   }
   
   .email-text {
-    font-size: 14px;
+    font-size: var(--font-tablet-small);
   }
 
   .contact-background {
@@ -269,60 +270,20 @@ const subtitleText = computed(() => {
   }
 }
 
-@media (max-width: 640px) {
-  .contact-content {
-    padding: 18px;
-  }
-  
-  .contact-title {
-    font-size: 24px;
-    letter-spacing: -0.4px;
-    color: white;
-
-  }
-  
-  .contact-subtitle {
-    font-size: 24px;
-    letter-spacing: -0.4px;
-    color: white;
-  }
-  
-  .contact-email {
-    padding: 12px 14px;
-    gap: 5px;
-  }
-  
-  .mail-icon {
-    width: 14px;
-    height: 14px;
-  }
-  
-  .arrow-icon {
-    width: 11px;
-    height: 11px;
-    top: 4px;
-    right: 4px;
-  }
-  
-  .email-text {
-    font-size: 14px;
-  }
-}
-
 @media (max-width: 480px) {
   .contact-content {
     padding: 16px;
   }
   
   .contact-title {
-    font-size: 20px;
+    font-size: var(--font-phone-medium);
     letter-spacing: -0.3px;
     color: white;
 
   }
   
   .contact-subtitle {
-    font-size: 20px;
+    font-size: var(--font-phone-huge);
     letter-spacing: -0.3px;
     color: white;
   }
@@ -345,7 +306,7 @@ const subtitleText = computed(() => {
   }
   
   .email-text {
-    font-size: 14px;
+    font-size: var(--font-phone-small);
   }
 }
 </style>

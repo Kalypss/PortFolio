@@ -79,7 +79,7 @@ const startNumberAnimation = () => {
     }
     
     if (progress < 1) {
-      requestAnimationFrame(updateNumber)
+      requestAnimationFrame(animate)
     }
   }
   
@@ -206,7 +206,7 @@ onUnmounted(() => {
 
 .project-title {
   font-family: 'DM Sans', sans-serif;
-  font-size: 18px;
+  font-size: small;
   font-weight: 300;
   color: #FFFFFF;
   margin: 0;
@@ -216,7 +216,7 @@ onUnmounted(() => {
 
 .project-subtitle {
   font-family: 'DM Sans', sans-serif;
-  font-size: 24px;
+  font-size: medium;
   font-weight: 700;
   color: #FFFFFF;
   margin: 0;
@@ -226,7 +226,7 @@ onUnmounted(() => {
 
 .number-animation {
   font-family: 'DM Sans', sans-serif;
-  font-size: 64px;
+  font-size: huge;
   font-weight: 900;
   color: #FFFFFF;
   transition: transform 0.2s ease;
@@ -255,97 +255,59 @@ onUnmounted(() => {
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@screen laptop {
   .project-layout {
     padding: 20px;
   }
   
   .project-title {
-    font-size: 16px;
+    font-size: laptop-small;
   }
   
   .project-subtitle {
-    font-size: 22px;
+    font-size: laptop-medium;
   }
   
   .number-animation {
-    font-size: 56px;
+    font-size: laptop-huge;
   }
 }
 
-@media (max-width: 992px) {
-  .project-layout {
-    padding: 18px;
-  }
-  
-  .project-title {
-    font-size: 15px;
-  }
-  
-  .project-subtitle {
-    font-size: 20px;
-  }
-  
-  .number-animation {
-    font-size: 48px;
-  }
-}
-
-@media (max-width: 768px) {
+@screen tablet {
   .project-layout {
     padding: 16px;
   }
   
   .project-title {
-    font-size: 14px;
+    font-size: tablet-small;
   }
   
   .project-subtitle {
-    font-size: 18px;
+    font-size: tablet-medium;
   }
   
   .number-animation {
-    font-size: 40px;
+    font-size: tablet-huge;
   }
 }
 
-@media (max-width: 640px) {
-  .project-layout {
-    padding: 14px;
-  }
-  
-  .project-title {
-    font-size: 13px;
-    letter-spacing: -0.2px;
-  }
-  
-  .project-subtitle {
-    font-size: 20px;
-    letter-spacing: -0.6px;
-  }
-  
-  .number-animation {
-    font-size: 60px;
-  }
-}
-
-@media (max-width: 480px) {
+@screen phone {
   .project-layout {
     padding: 12px;
   }
   
   .project-title {
-    font-size: 18px;
+    font-size: phone-small;
     letter-spacing: -0.1px;
   }
   
   .project-subtitle {
-    font-size: 20px;
+    font-size: phone-medium;
     letter-spacing: -0.4px;
   }
   
   .number-animation {
-    font-size: 36px;
+    font-size: phone-huge;
   }
 }
 </style>

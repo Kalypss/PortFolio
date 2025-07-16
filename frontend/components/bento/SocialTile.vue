@@ -204,7 +204,7 @@ const openSocialLink = () => {
 /* Description alignée à gauche sous le logo */
 .social-description {
   color: var(--text-primary);
-  font-size: 16px;
+  font-size: medium;
   font-weight: 600;
   margin: 0;
   line-height: 1.3;
@@ -227,7 +227,7 @@ const openSocialLink = () => {
   border-radius: 25px;
   padding: 10px 20px;
   color: var(--text-primary);
-  font-size: 14px;
+  font-size: small;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -265,16 +265,16 @@ const openSocialLink = () => {
   }
   
   .logo-fallback {
-    font-size: 18px;
+    font-size: laptop-medium;
   }
   
   .social-description {
-    font-size: 15px;
+    font-size: laptop-small;
   }
   
   .follow-button {
     padding: 9px 18px;
-    font-size: 13px;
+    font-size: laptop-small;
   }
 }
 
@@ -291,16 +291,16 @@ const openSocialLink = () => {
   }
   
   .logo-fallback {
-    font-size: 16px;
+    font-size: tablet-medium;
   }
   
   .social-description {
-    font-size: 14px;
+    font-size: tablet-small;
   }
   
   .follow-button {
     padding: 8px 16px;
-    font-size: 12px;
+    font-size: tablet-smaller;
   }
 }
 
@@ -317,7 +317,7 @@ const openSocialLink = () => {
   }
   
   .logo-fallback {
-    font-size: 14px;
+    font-size: tablet-small;
   }
    .social-background {
     opacity: 0.9;
@@ -325,12 +325,12 @@ const openSocialLink = () => {
   }
   
   .social-description {
-    font-size: 13px;
+    font-size: tablet-small;
   }
   
   .follow-button {
     padding: 7px 14px;
-    font-size: 11px;
+    font-size: tablet-smaller;
   }
 }
 
@@ -347,17 +347,17 @@ const openSocialLink = () => {
   }
   
   .logo-fallback {
-    font-size: 12px;
+    font-size: small;
   }
   
   .social-description {
-    font-size: 12px;
+    font-size: small;
     max-width: 90%;
   }
   
   .follow-button {
     padding: 6px 12px;
-    font-size: 10px;
+    font-size: smaller;
     border-radius: 20px;
   }
   
@@ -409,12 +409,12 @@ const openSocialLink = () => {
   }
   
   .logo-fallback {
-    font-size: 10px;
+    font-size: smaller;
     border-radius: 6px;
   }
   
   .social-description {
-    font-size: 16px;
+    font-size: small;
     max-width: 95%;
     line-height: 1.2;
     margin-bottom: 10px;
@@ -422,7 +422,7 @@ const openSocialLink = () => {
   
   .follow-button {
     padding: 5px 10px;
-    font-size: 14px;
+    font-size: small;
     border-radius: 16px;
   }
   

@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   // Fichiers CSS globaux
-  css: ['~/assets/css/critical.css', '~/assets/css/main.css'],
+  css: ['~/assets/css/main.css'],
 
   // Configuration pour les bibliothèques côté client
   build: {

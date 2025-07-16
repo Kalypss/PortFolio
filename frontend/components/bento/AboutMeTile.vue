@@ -123,16 +123,16 @@ const clickText = computed(() => {
   margin-bottom: 20px;
 }
 
-.about-title {
-  font-family: 'DM Serif Display', sans-serif;
-  font-size: 48px;
-  font-weight: 500;
-  color: var(--text-primary);
-  margin: 0;
-  line-height: 0.9;
-  letter-spacing: -2px;
-  transition: all 0.3s ease;
-  text-align: right;
+  .about-title {
+    font-family: 'DM Serif Display', sans-serif;
+    font-size: var(--font-huge);
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 0.9;
+    letter-spacing: -2px;
+    transition: all 0.3s ease;
+    text-align: right;
 }
 
 .about-title.hovered {
@@ -145,17 +145,17 @@ const clickText = computed(() => {
   align-items: center;
 }
 
-.about-description p {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  color: var(--text-primary);
-  line-height: 1.6;
-  margin: 0;
-  opacity: 0.8;
-  transition: all 0.3s ease;
-  text-align: left;
-  white-space: pre-line;
+  .about-description p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: var(--font-medium);
+    font-weight: 400;
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    text-align: left;
+    white-space: pre-line;
 }
 
 .about-description.hovered p {
@@ -164,19 +164,19 @@ const clickText = computed(() => {
 }
 
 /* Indicateur cliquable */
-.click-indicator {
-  position: absolute;
-  bottom: 32px;
-  right: 32px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.3s ease;
-  color: var(--accent-primary);
-  font-weight: 500;
-  font-size: 14px;
+  .click-indicator {
+    position: absolute;
+    bottom: 32px;
+    right: 32px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    color: var(--accent-primary);
+    font-weight: 500;
+    font-size: var(--font-small);
 }
 
 .click-indicator.visible {
@@ -194,73 +194,44 @@ const clickText = computed(() => {
 }
 
 /* Responsive */
-@media (max-width: 1380px) {
+@media (max-width: 1200px) {
   .about-content {
     padding: 28px;
   }
-  
   .about-title {
-    font-size: 42px;
+    font-size: var(--font-laptop-huge);
     letter-spacing: -1.5px;
   }
-  
   .about-description p {
-    font-size: 24px;
+    font-size: var(--font-laptop-medium);
+  }
+  .click-indicator {
+    font-size: var(--font-laptop-small);
   }
 }
-
-
 
 @media (max-width: 768px) {
   .about-content {
     padding: 20px;
   }
-
   .about-background{
     opacity: 1;
   }
-  
-  .click-indicator {
-    opacity: 1;
-    transform: translateX(2px) translateY(10px);
-    color: white;
-  }
-
-  .about-tile:hover .click-indicator svg {
-  transform: translateX(0px) translateY(0px);
-  }
-
-  .about-title {
-    font-size: 32px;
-    letter-spacing: -0.8px;
-  }
-  
-  .about-description p {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 640px) {
-  .about-content {
-    padding: 18px;
-  }
- .about-background{
-    opacity: 1;
-  }
-
   .click-indicator {
     opacity: 0;
+    transform: translateX(2px) translateY(10px);
+    color: white;
+    font-size: var(--font-tablet-small);
   }
-
-
+  .about-tile:hover .click-indicator svg {
+    transform: translateX(0px) translateY(0px);
+  }
   .about-title {
-    font-size: 28px;
-    letter-spacing: -0.6px;
+    font-size: var(--font-tablet-huge);
+    letter-spacing: -0.8px;
   }
-  
   .about-description p {
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: var(--font-tablet-medium);
   }
 }
 
@@ -268,18 +239,19 @@ const clickText = computed(() => {
   .about-content {
     padding: 16px;
   }
-  
   .about-background{
     opacity: 1;
   }
-
+  .click-indicator {
+    opacity: 0;
+    font-size: var(--font-phone-small);
+  }
   .about-title {
-    font-size: 24px;
+    font-size: var(--font-phone-huge);
     letter-spacing: -0.5px;
   }
-  
   .about-description p {
-    font-size: 16px;
+    font-size: var(--font-phone-medium);
     line-height: 1.4;
   }
 }

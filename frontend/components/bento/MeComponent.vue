@@ -87,34 +87,32 @@ const nameText = computed(() => {
   gap: 0;
 }
 
-.greeting {
-  font-family: 'DM Serif Display', serif;
-  font-size: 2vw;
-  font-weight: 400;
-  color: #FFFFFF;
-  margin: 0;
-  line-height: 0.2;
+  .greeting {
+    font-family: 'DM Serif Display', serif;
+    font-size: calc(var(--font-big)*1.5);
+    font-weight: 400;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 0.2;
+  }
 
-}
-
-.name {
-  font-family: 'DM Sans', serif;
-  font-size: 4vw;
-  font-weight: 400;
-  color: #FFFFFF;
-  margin: 0;
-  line-height: 1.1;
-  letter-spacing: -2px;
-}
+  .name {
+    font-family: 'DM Sans', serif;
+    font-size: calc(var(--font-huge)*1.5);
+    font-weight: 400;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: -2px;
+  }
 
 /* Responsive */
-@media (max-width: 1380px) {
+@media (max-width: 1200px) {
   .me-content {
     padding: 6px 10px;
     justify-content: center;
     align-items: center;
   }
-  
   .profile-image-container {
     height: 100%;
     width: 100%;
@@ -123,31 +121,24 @@ const nameText = computed(() => {
     position: relative;
   }
   .greeting {
-  font-family: 'DM Serif Display', serif;
-  font-size: 4vw;
-
+    font-size: var(--font-laptop-big);
+  }
+  .name {
+    font-size: var(--font-laptop-huge);
+  }
 }
 
-.name {
-  font-family: 'DM Sans', serif;
-  font-size: 8vw;
-}
-}
-
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .me-content {
     padding: 8px 12px;
   }
-  
   .greeting {
-    font-size: 8vw;
+    font-size: var(--font-tablet-big);
   }
-  
   .name {
-    font-size: 18vw;
+    font-size: var(--font-tablet-huge);
     letter-spacing: -2px;
     font-weight: 400;
-
   }
 }
 
@@ -157,13 +148,20 @@ const nameText = computed(() => {
     justify-content: center;
     align-items: center;
   }
-  
   .profile-image-container {
     height: 100%;
     width: 100%;
     transform: scale(1);
     overflow: hidden;
     position: relative;
+  }
+  .greeting {
+    font-size: var(--font-phone-big);
+  }
+  .name {
+    font-size: var(--font-phone-huge);
+    letter-spacing: -2px;
+    font-weight: 400;
   }
 }
 </style>

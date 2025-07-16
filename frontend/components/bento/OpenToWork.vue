@@ -175,10 +175,11 @@ const subtitleText = computed(() => {
   gap: 0;
 }
 
+
 .title {
   font-family: 'DM Sans', sans-serif;
   font-weight: 500;
-  font-size: 1.6rem;
+  font-size: var(--font-medium);
   margin: 0;
   line-height: 0.9;
   color: var(--text-primary);
@@ -189,7 +190,7 @@ const subtitleText = computed(() => {
   font-family: 'DM Serif Display', serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 1.8rem;
+  font-size: var(--font-big);
   margin: 0;
   margin-top: -0.1rem;
   line-height: 0.9;
@@ -214,76 +215,45 @@ const subtitleText = computed(() => {
 
 /* Point de statut avec animation pulse */
 
-/* Responsive */
-@media (max-width: 1380px) {
-  .title {
-    font-size: 1.2rem;
-  }
-  
-  .open-to-work-container{
-      padding: 15px;
-  }
 
-  .content{
+/* Responsive */
+@media (max-width: 1200px) {
+  .title {
+    font-size: var(--font-laptop-medium);
+  }
+  .subtitle {
+    font-size: var(--font-laptop-big);
+  }
+  .open-to-work-container {
+    padding: 15px;
+  }
+  .content {
     padding-left: 10px;
     padding-bottom: 5px;
-  }
-
-  .subtitle {
-    font-size: 1.4rem;
-  }
-  
-  .status-indicator {
-    width: 20px;
-    height: 20px;
-    
-  }
-  
-  .status-dot {
-    width: 14px;
-    height: 14px;
-  }
-  
-  .pulse-ring {
-    width: 20px;
-    height: 20px;
   }
 }
 
 @media (max-width: 768px) {
-  .open-to-work-container {
-    padding: 15px;
-  }
-  
   .title {
-    font-size: 1.1rem;
+    font-size: var(--font-tablet-small);
   }
-  
   .subtitle {
-    font-size: 1.3rem;
+    font-size: var(--font-tablet-medium);
   }
-  
-  .status-indicator {
-    top: 15px;
-    right: 15px;
-    width: 16px;
-    height: 16px;
+  .open-to-work-container {
+    padding: 12px;
   }
-  
-  .status-dot {
-    width: 10px;
-    height: 10px;
-    top: 3px;
-    left: 3px;
-  }
-  
-  .pulse-ring {
-    width: 16px;
-    height: 16px;
-  }
+}
 
-  .work-background {
-    opacity: 0.8;
+@media (max-width: 480px) {
+  .title {
+    font-size: var(--font-phone-small);
+  }
+  .subtitle {
+    font-size: var(--font-phone-medium);
+  }
+  .open-to-work-container {
+    padding: 8px;
   }
 }
 

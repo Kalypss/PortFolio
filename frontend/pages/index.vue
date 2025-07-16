@@ -731,10 +731,12 @@ onMounted(async () => {
 
 
 /* Assurer que chaque section prend exactement la hauteur de l'écran */
-.hero-section,
-.bento-section {
+.hero-section {
   min-height: 100vh;
-  max-height: 100vh;
+}
+
+.bento-section {
+  min-height: auto;
 }
 
 .projects-section {
@@ -839,11 +841,6 @@ onMounted(async () => {
   transition: transform 0.3s ease;
 }
 
-/* Indicateurs du carrousel */
-.carousel-indicators {
-  z-index: 10;
-}
-
 .indicator {
   background-color: var(--text-primary);
   cursor: pointer;
@@ -859,22 +856,6 @@ onMounted(async () => {
   opacity: 1;
 }
 
-/* Boutons de navigation - sans bordure ni fond */
-.carousel-nav {
-  background-color: var(--dynamic-bg, rgba(255, 255, 255, 0.7)); /* Fallback pour le blanc */
-  border: none;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--dynamic-color, #000000); /* Fallback pour le noir */
-  transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
-  cursor: pointer;
-  z-index: 10;
-  opacity: 0.8;
-}
 
 .carousel-nav:hover {
   opacity: 1;

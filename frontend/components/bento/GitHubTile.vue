@@ -29,18 +29,18 @@
         <div class="contributions-title">
           {{ t('contributions') }}
         </div>
-        <div class="contributions-legend">
-          <span class="legend-text">{{ currentLanguage === 'fr' ? 'Moins' : 'Less' }}</span>
-          <div class="legend-squares">
-            <div 
-              v-for="level in 5" 
-              :key="level"
-              class="legend-square"
-              :style="{ backgroundColor: getContributionColor(level - 1) }"
-            ></div>
-          </div>
-          <span class="legend-text">{{ currentLanguage === 'fr' ? 'Plus' : 'More' }}</span>
+      </div>
+      <div class="contributions-legend-absolute">
+        <span class="legend-text">{{ currentLanguage === 'fr' ? 'Moins' : 'Less' }}</span>
+        <div class="legend-squares">
+          <div 
+            v-for="level in 5" 
+            :key="level"
+            class="legend-square"
+            :style="{ backgroundColor: getContributionColor(level - 1) }"
+          ></div>
         </div>
+        <span class="legend-text">{{ currentLanguage === 'fr' ? 'Plus' : 'More' }}</span>
       </div>
       
       <!-- Grille de contributions avec labels des jours -->
@@ -200,6 +200,7 @@ onMounted(() => {
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
+  padding: 0px 10px;
 }
 
 .title-section {
@@ -214,24 +215,24 @@ onMounted(() => {
   padding-top: 2px;
 }
 
-.username-box {
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--text-primary);
-  transition: all 0.3s ease;
-  cursor: pointer;
+  .username-box {
+    font-size: var(--font-medium);
+    font-weight: 800;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .username-box:hover {
   text-decoration: underline;
 }
 
-.github-title {
-  font-size: 28px;
-  font-weight: 600;
-  margin-left: 10px;
-  letter-spacing: -2px;
-  color: var(--text-primary);
+  .github-title {
+    font-size: var(--font-big);
+    font-weight: 600;
+    margin-left: 10px;
+    letter-spacing: -2px;
+    color: var(--text-primary);
 }
 
 .stats-section {
@@ -249,19 +250,19 @@ onMounted(() => {
   text-align: right;
 }
 
-.stat-number {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1;
+  .stat-number {
+    font-size: var(--font-big);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
 }
 
-.stat-label {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  text-transform: capitalize;
-  letter-spacing: -0.5px;
+  .stat-label {
+    font-size: var(--font-smaller);
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: capitalize;
+    letter-spacing: -0.5px;
 }
 
 /* Header contributions avec titre et légende */
@@ -270,15 +271,16 @@ onMounted(() => {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 8px;
-  width: 100%;
+  width: 90%;
 }
 
 /* Titre contributions */
-.contributions-title {
-  font-size: 13px;
-  color: var(--text-primary);
-  margin: 0;
-  font-weight: 500;
+  .contributions-title {
+    font-size: var(--font-smaller);
+    color: var(--text-primary);
+    margin: 0;
+    font-weight: 500;
+    
 }
 
 /* Section contributions */
@@ -286,16 +288,19 @@ onMounted(() => {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 0 10px;
+  padding: 0px 10px;
   position: relative;
   margin-top: 0px;
 }
 
-/* Légende des contributions */
-.contributions-legend {
+.contributions-legend-absolute {
+  position: absolute;
+  top: 0;
+  right: 10px;
   display: flex;
   align-items: center;
   gap: 6px;
+  z-index: 4; /* Ensure it's above the grid */
 }
 
 .contribution-container {
@@ -312,7 +317,7 @@ onMounted(() => {
   grid-auto-flow: column;
   gap: 2px;
   width: 100%;
-  height: 90px;
+  max-width: 90%; /* Added max-width */
 }
 
 .contribution-day {
@@ -323,12 +328,13 @@ onMounted(() => {
   height: 100%;
   min-width: 3px;
   min-height: 3px;
+  aspect-ratio: 1 / 1;
 }
 
-.legend-text {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--text-primary);
+  .legend-text {
+    font-size: var(--font-smaller);
+    font-weight: 500;
+    color: var(--text-primary);
 }
 
 .legend-squares {
@@ -347,31 +353,23 @@ onMounted(() => {
   .github-tile {
     gap: 14px;
   }
-  
   .github-title {
-    font-size: 24px;
+    font-size: var(--font-laptop-big);
   }
-  
   .stat-number {
-    font-size: 22px;
+    font-size: var(--font-laptop-big);
   }
-}
-
-@media (max-width: 992px) {
-  .github-tile {
-    gap: 12px;
+  .username-box {
+    font-size: var(--font-laptop-medium);
   }
-  
-  .github-title {
-    font-size: 20px;
+  .stat-label {
+    font-size: var(--font-laptop-smaller);
   }
-  
-  .stat-number {
-    font-size: 20px;
+  .contributions-title {
+    font-size: var(--font-laptop-smaller);
   }
-  
-  .contribution-grid {
-    height: 85px;
+  .legend-text {
+    font-size: var(--font-laptop-smaller);
   }
 }
 
@@ -380,149 +378,50 @@ onMounted(() => {
     padding: 16px;
     gap: 12px;
   }
-  
   .github-title {
-    font-size: 18px;
+    font-size: var(--font-tablet-big);
     margin-left: 8px;
   }
-  
   .username-box {
-    font-size: 12px;
+    font-size: var(--font-tablet-small);
     padding: 6px 12px;
     border-radius: 16px;
   }
-  
   .stats-section {
     gap: 16px;
   }
-  
   .stat-number {
-    font-size: 18px;
+    font-size: var(--font-tablet-big);
   }
-  
+  .stat-label {
+    font-size: var(--font-tablet-smaller);
+  }
   .contribution-header {
     margin-bottom: 10px;
   }
-  
   .contribution-container {
     gap: 6px;
   }
-  
   .day-label {
     height: calc((70px - 10px) / 7);
     font-size: 7px;
     width: 18px;
   }
-  
   .contribution-grid {
     gap: 1px;
-    height: 70px;
   }
-  
   .contributions-section {
     padding: 0 15px;
   }
-  
   .contributions-legend {
     gap: 4px;
   }
-  
   .legend-text {
-    font-size: 8px;
+    font-size: var(--font-tablet-smaller);
   }
-  
   .legend-square {
     width: 7px;
     height: 7px;
-  }
-}
-
-@media (max-width: 640px) {
-  .github-tile {
-    padding: 14px;
-    gap: 10px;
-  }
-  
-  .github-header {
-    /* Garder le layout horizontal sur mobile */
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .title-section,
-  .username-section,
-  .stats-section {
-    /* Répartir l'espace équitablement */
-    flex: 1;
-    display: flex;
-    align-items: center;
-  }
-  
-  .title-section {
-    justify-content: flex-start;
-  }
-  
-  .username-section {
-    justify-content: center;
-  }
-  
-  .stats-section {
-    justify-content: flex-end;
-    gap: 8px;
-  }
-  
-  .github-title {
-    font-size: 16px;
-    margin-left: 0;
-    text-align: left;
-  }
-  
-  .username-box {
-    font-size: 11px;
-    padding: 4px 8px;
-    border-radius: 12px;
-  }
-  
-  .stat-item {
-    align-items: center;
-    text-align: center;
-  }
-  
-  .stat-number {
-    font-size: 14px;
-  }
-  
-  .stat-label {
-    font-size: 9px;
-  }
-  
-  .contribution-grid {
-    height: 60px;
-  }
-  
-  .day-label {
-    height: calc((60px - 10px) / 7);
-    font-size: 6px;
-    width: 16px;
-  }
-  
-  .contributions-section {
-    padding: 0 10px;
-  }
-  
-  .contributions-title {
-    font-size: 10px;
-  }
-  
-  .legend-text {
-    font-size: 7px;
-  }
-  
-  .legend-square {
-    width: 6px;
-    height: 6px;
   }
 }
 
@@ -532,89 +431,70 @@ onMounted(() => {
     gap: 8px;
     letter-spacing: 0px;
   }
-  
   .github-header {
-    /* Maintenir le layout horizontal même sur très petits écrans */
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     justify-content: center;
     gap: 6px;
   }
-  
   .title-section,
   .username-section,
   .stats-section {
     flex: 1;
     display: flex;
     align-items: center;
-    
   }
-  
   .title-section {
     justify-content: flex-start;
     letter-spacing: 0px;
     font-weight: 300;
   }
-  
   .username-section {
     justify-content: center;
   }
-  
   .stats-section {
     justify-content: flex-end;
     gap: 6px;
   }
-  
   .github-title {
-    font-size: 18px;
+    font-size: var(--font-phone-big);
     margin-left: 0;
     font-weight: 600;
     letter-spacing: -1px;
   }
-  
   .username-box {
-    font-size: 10px;
+    font-size: var(--font-phone-small);
     padding: 3px 6px;
     border-radius: 10px;
   }
-  
   .stat-item {
     align-items: center;
     text-align: center;
   }
-  
   .stat-number {
-    font-size: 12px;
+    font-size: var(--font-phone-medium);
   }
-  
   .stat-label {
-    font-size: 8px;
+    font-size: var(--font-phone-smaller);
   }
-  
   .contributions-title {
-    font-size: 9px;
+    font-size: var(--font-phone-smaller);
   }
-  
   .contribution-grid {
-    height: 50px;
   }
-  
   .day-label {
     height: calc((50px - 8px) / 7);
     font-size: 5px;
     width: 14px;
   }
-  
   .legend-text {
-    font-size: 6px;
+    font-size: var(--font-phone-smaller);
   }
-  
   .legend-square {
     width: 5px;
     height: 5px;
   }
-  
   .contributions-section {
     padding: 0 8px;
   }
