@@ -1,11 +1,11 @@
-import Image from "next/image";
-import ContactButton from "@/components/custom/ContactButton";
-
+import Navbar from "@/components/custom/Navigation";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <ContactButton></ContactButton>
-    </div>
+    <main>
+      <Navbar />
+      <div className="flex flex-col items-center justify-center min-h-[100vh] gap-8">
+      </div>
+    </main>
   );
 }

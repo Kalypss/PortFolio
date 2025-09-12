@@ -20,7 +20,7 @@ export default function ContactButton() {
         <AlertDialog>
         <AlertDialogTrigger asChild>
             <Button
-            className="bg-[#8343FF] font-semibold tracking-tighter  border-2 border-black py-6 text-2xl hover:bg-[#733cdf] cursor-pointer rounded-2xl shadow-[0px_6px_0px_0px_rgba(0,_0,_0,_0.8)] hover:shadow-[0px_2px_0px_0px_rgba(0,_0,_0,_0.8)] hover:translate-y-2"
+            className="bg-[#8343FF]  font-semibold tracking-tighter  border-2 border-black py-6 text-2xl hover:bg-[#733cdf] cursor-pointer rounded-2xl shadow-[0px_6px_0px_0px_rgba(0,_0,_0,_0.8)] hover:shadow-[0px_2px_0px_0px_rgba(0,_0,_0,_0.8)] hover:translate-y-2 "
             >
                 <div className="flex flex-row items-center justify-center gap-3 p-4">
                     <Mail className="size-6" strokeWidth={3} /> Contact
