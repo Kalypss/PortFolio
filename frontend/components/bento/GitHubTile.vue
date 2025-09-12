@@ -317,7 +317,7 @@ onMounted(() => {
   grid-auto-flow: column;
   gap: 2px;
   width: 100%;
-  max-width: 90%; /* Added max-width */
+  max-width: 70%; /* Added max-width */
 }
 
 .contribution-day {
